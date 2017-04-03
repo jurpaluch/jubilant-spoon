@@ -1,0 +1,8 @@
+{
+  "HOME": {
+    "TITLE": "Hello Angular 2 with ng2-translate!",
+    "SELECT": "Change language",
+    "TODOS": "Todos",
+    "NEEDS TO BE DONE": "What needs to be done?"
+  }
+}

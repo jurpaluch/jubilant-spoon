@@ -1,4 +1,4 @@
 <header class="header">
-  <h1>Todos</h1>
-  <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+  <h1>{{ 'HOME.TODOS' | translate }}</h1>
+  <input class="new-todo" placeholder="{{ 'HOME.NEEDS TO BE DONE' | translate }}" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
 </header>

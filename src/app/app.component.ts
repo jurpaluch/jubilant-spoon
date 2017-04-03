@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import {TodoDataService} from './todo-data.service';
+
+import { TranslateModule} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
+
+import { TodoDataService } from './todo-data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +12,15 @@ import {TodoDataService} from './todo-data.service';
 })
 export class AppComponent {
 
-  constructor(private todoDataService: TodoDataService) {
+  constructor(
+    private todoDataService: TodoDataService,
+    private translate: TranslateService
+    ) {
+      translate.addLangs(["en", "fr"]);
+      translate.setDefaultLang('en');
+
+      let browserLang = translate.getBrowserLang();
+      translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
   }
 
   onAddTodo(todo) {
