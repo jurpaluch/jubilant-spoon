@@ -4,7 +4,14 @@
                  (remove)="onRemoveTodo($event)"></app-todo-list>
   <app-todo-list-footer [todos]="todos"></app-todo-list-footer>
 </section>
-
+<section style="text-align: center;">
+  <button md-button color="primary">Change language</button>
+  <md-select placeholder="{{ 'HOME.SELECT' | translate }}" [(ngModel)]="selectedValue" name="langSelect" (change)="translate.use({{selectedValue}})">
+    <md-option *ngFor="let lang of translate.getLangs()" [value]="langSelect.value" [selected]="lang === translate.currentLang">
+      {{ lang }}
+    </md-option>
+  </md-select>
+</section>
     <div>
       <label>
         {{ 'HOME.SELECT' | translate }}
